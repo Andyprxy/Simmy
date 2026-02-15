@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>The Genius | Skin & Electronics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --rose-main: #ff8fa3;
+            --glass-border: rgba(255, 255, 255, 0.3);
+        }
+
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; color: #1a1a1a; overflow-x: hidden; }
+        h1, h2, h3, .serif { font-family: 'Playfair Display', serif; }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+        }
+
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title { line-height: 0.95; letter-spacing: -0.04em; }
+
+        @keyframes ticker {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        .ticker-wrap { width: 100%; overflow: hidden; background: #000; padding: 12px 0; }
+        .ticker { display: flex; width: 200%; animation: ticker 25s linear infinite; }
+        .ticker-item { flex-shrink: 0; padding: 0 2rem; color: white; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <nav class="fixed top-0 left-0 right-0 z-50 glass-nav">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex justify-between items-center">
+            <div class="serif text-xl font-bold tracking-tight">
+                The<span class="text-rose-400 italic">Genius.</span>
+            </div>
+            <div class="hidden md:flex gap-8 text-[10px] font-bold tracking-widest text-gray-400 uppercase">
+                <a href="#beauty" class="hover:text-rose-400 transition">Skin Care</a>
+                <a href="#tech" class="hover:text-black transition">Electronics</a>
+            </div>
+            <a href="https://wa.me/27815440412" class="bg-black text-white px-5 py-2.5 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-rose-400 transition">
+                WhatsApp <i class="fab fa-whatsapp ml-1"></i>
+            </a>
+        </div>
+    </nav>
+
+    <section class="relative min-h-screen w-full flex flex-col justify-center items-center pt-20 pb-12 px-4 overflow-hidden bg-[url('grass.jpg')] bg-cover bg-center bg-fixed">
+        
+        <div class="absolute inset-0 bg-black/35"></div>
+
+        <div class="text-center max-w-4xl mx-auto mb-16 z-10">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-8">
+                <i class="fab fa-tiktok text-rose-300"></i>
+                <span class="text-[9px] font-bold tracking-[0.3em] uppercase text-white">535K TikTok Community</span>
+            </div>
+            
+            <h1 class="hero-title text-6xl md:text-[7.5rem] font-medium text-white mb-10">
+                The Genius<br>
+                <span class="text-rose-300 italic">Skin</span> 
+                <span class="text-white/40 font-light">&</span> 
+                <span class="text-slate-200 italic">Electronics</span>
+            </h1>
+
+            <p class="text-white/80 font-light text-sm md:text-xl max-w-2xl mx-auto leading-relaxed">
+                We bridge the gap from global manufacturing to local luxury. Direct supplier prices on premium skincare and authentic Apple tech.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-5xl z-10">
+            <a href="#beauty" class="glass-panel group relative h-48 md:h-64 rounded-[2.5rem] overflow-hidden flex items-end p-8 transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-0 bg-gradient-to-t from-rose-400/20 to-transparent"></div>
+                <div class="relative">
+                    <span class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Department 01</span>
+                    <h2 class="serif text-3xl text-white italic">Explore Skin</h2>
+                </div>
+                <i class="fas fa-arrow-right absolute top-8 right-8 text-white/30 group-hover:text-white transition"></i>
+            </a>
+
+            <a href="#tech" class="glass-panel group relative h-48 md:h-64 rounded-[2.5rem] overflow-hidden flex items-end p-8 transition-transform hover:scale-[1.02]">
+                <div class="absolute inset-0 bg-gradient-to-t from-white/10 to-transparent"></div>
+                <div class="relative">
+                    <span class="text-[10px] uppercase tracking-widest text-white/60 block mb-1">Department 02</span>
+                    <h2 class="serif text-3xl text-white">Shop Electronics</h2>
+                </div>
+                <i class="fas fa-arrow-right absolute top-8 right-8 text-white/30 group-hover:text-white transition"></i>
+            </a>
+        </div>
+    </section>
+
+    <div class="ticker-wrap relative z-20">
+        <div class="ticker">
+            <div class="ticker-item">Direct Chinese Supplier Prices <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">Nationwide Delivery via Paxi/Aramex <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">3-Month Lay-By Accepted <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">6 Months Tech Guarantee <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">Direct Chinese Supplier Prices <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">Nationwide Delivery via Paxi/Aramex <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">3-Month Lay-By Accepted <i class="fas fa-star text-rose-400 mx-2"></i></div>
+            <div class="ticker-item">6 Months Tech Guarantee <i class="fas fa-star text-rose-400 mx-2"></i></div>
+        </div>
+    </div>
+
+    <section id="beauty" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="flex flex-col md:flex-row gap-16 items-center mb-20">
+            <div class="md:w-1/2">
+                <span class="text-rose-400 text-[10px] font-bold tracking-[0.4em] uppercase">The Backbone</span>
+                <h2 class="text-5xl md:text-7xl serif mt-4 mb-6 leading-tight text-gray-900">Organic <br><span class="italic text-rose-400">Luxury Skin.</span></h2>
+                <p class="text-gray-500 font-light leading-relaxed mb-8">Premium reseller supplies. Direct pricing on Turmeric, Charcoal, and Glow formulations available in x6 and x10 packs.</p>
+            </div>
+            <div class="md:w-1/2 rounded-[3rem] overflow-hidden shadow-2xl">
+                <img src="https://images.unsplash.com/photo-1608248597279-f99d160bfbc8?auto=format&fit=crop&q=80" class="w-full h-[500px] object-cover">
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="glass-panel p-10 rounded-[3rem] shadow-sm">
+                <h3 class="text-xl serif italic mb-8 border-b pb-4">Soaps (x10 Pack)</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex justify-between"><span>Charcoal Soap</span> <span class="font-bold">R450</span></li>
+                    <li class="flex justify-between"><span>Turmeric Soap</span> <span class="font-bold">R400</span></li>
+                    <li class="flex justify-between"><span>Black African Soap</span> <span class="font-bold">R450</span></li>
+                </ul>
+            </div>
+            <div class="bg-rose-50/50 border border-rose-100 p-10 rounded-[3rem]">
+                <h3 class="text-xl serif italic mb-8 border-b border-rose-100 pb-4 text-rose-500">Oils (x10 Pack)</h3>
+                <ul class="space-y-4 text-sm">
+                    <li class="flex justify-between"><span>Glow Serum</span> <span class="font-bold">R500</span></li>
+                    <li class="flex justify-between"><span>Dark Inner Thigh Oil</span> <span class="font-bold">R550</span></li>
+                    <li class="flex justify-between text-rose-500"><span>Vitamin C Toner</span> <span class="font-bold">R600</span></li>
+                </ul>
+            </div>
+            <div class="bg-black text-white p-10 rounded-[3rem] shadow-xl">
+                <h3 class="text-xl serif italic mb-8 border-b border-white/10 pb-4">Bulk Wholesale</h3>
+                <ul class="space-y-4 text-sm text-gray-400">
+                    <li class="flex justify-between"><span>Glow Serum (5L)</span> <span class="text-white font-bold">R1000</span></li>
+                    <li class="flex justify-between"><span>Scrubs (5L)</span> <span class="text-white font-bold">R700</span></li>
+                    <li class="flex justify-between"><span>Carrot Oil (5L)</span> <span class="text-white font-bold">R900</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="tech" class="bg-[#0a0a0a] text-white py-32 rounded-t-[4rem] relative">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row gap-16 items-center mb-24">
+                <div class="md:w-1/2">
+                    <span class="text-gray-500 text-[10px] font-bold tracking-[0.4em] uppercase">The Tech Vault</span>
+                    <h2 class="text-5xl md:text-7xl serif mt-4 mb-6 leading-tight">Apple <br><span class="italic text-gray-500">Inventory.</span></h2>
+                    <p class="text-gray-400 font-light leading-relaxed mb-8">Authentic stock ranging from iPhone X to 17. 6-month tech guarantee and 3-month lay-by options available.</p>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="https://images.unsplash.com/photo-1696446702371-9659b4c09d58?auto=format&fit=crop&q=80" class="w-full h-[300px] object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.1)]">
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-6">iPhone X & 11</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between"><span>XR (64GB)</span> <span class="text-gray-400">R3 320</span></li>
+                        <li class="flex justify-between"><span>X MAX (64GB)</span> <span class="text-gray-400">R3 540</span></li>
+                        <li class="flex justify-between"><span>11 (128GB)</span> <span class="text-gray-400">R4 000</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-6">iPhone 12 & 13</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between"><span>12 (64GB)</span> <span class="text-gray-400">R4 055</span></li>
+                        <li class="flex justify-between"><span>13 (128GB)</span> <span class="text-gray-400">R5 700</span></li>
+                        <li class="flex justify-between"><span>13 Pro Max</span> <span class="text-gray-400">R7 200</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white/10 border border-rose-400/30 p-8 rounded-[2rem] transform md:scale-105 shadow-2xl">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-rose-300 mb-6">iPhone 14 & 15</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between"><span>14 (128GB)</span> <span class="font-bold">R6 150</span></li>
+                        <li class="flex justify-between text-rose-300"><span>15 Pro Max</span> <span class="font-bold">R10 300</span></li>
+                    </ul>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-[2rem]">
+                    <h4 class="text-[10px] font-bold uppercase tracking-widest text-gray-500 mb-6">iPhone 16 & 17</h4>
+                    <ul class="space-y-4 text-sm">
+                        <li class="flex justify-between"><span>16 (128GB)</span> <span class="text-gray-400">R10 600</span></li>
+                        <li class="flex justify-between italic text-gray-600"><span>17 Series</span> <span>POA</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-black py-12 px-6 text-center border-t border-white/5">
+        <div class="serif text-2xl text-white mb-6">The<span class="text-rose-400 italic">Genius.</span></div>
+        <p class="text-[8px] uppercase tracking-[0.6em] text-gray-700">© 2026 The Genius | Powered by Automania</p>
+    </footer>
+
+</body>
+</html>
