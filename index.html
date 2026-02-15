@@ -40,7 +40,7 @@
         .ticker { display: flex; width: 200%; animation: ticker 25s linear infinite; }
         .ticker-item { flex-shrink: 0; padding: 0 2rem; color: white; font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
 
-        /* Chat Widget Styles */
+        /* --- Chat Widget Styles --- */
         .chat-container {
             display: none;
             position: fixed;
@@ -54,6 +54,20 @@
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0,0,0,0.2);
             animation: slideUp 0.3s ease-out;
+        }
+
+        /* Mobile Optimization for Chat */
+        @media (max-width: 640px) {
+            .chat-container {
+                width: 90%; /* Fit screen width */
+                right: 5%;
+                bottom: 90px;
+                height: 60vh; /* Adjust height for keyboard */
+            }
+            /* Prevent iOS Zoom on input focus */
+            input, select, textarea {
+                font-size: 16px !important;
+            }
         }
 
         .chat-messages {
@@ -321,7 +335,7 @@
         const chatInput = document.getElementById('chat-input');
         const messagesDiv = document.getElementById('chat-messages');
 
-        // NEW: Generate or Retrieve Session ID
+        // Generate or Retrieve Session ID
         let sessionId = localStorage.getItem('simmy_chat_session');
         if (!sessionId) {
             sessionId = 'user_' + Math.random().toString(36).substr(2, 9);
@@ -334,6 +348,8 @@
                 chatContainer.style.display = 'none';
             } else {
                 chatContainer.style.display = 'flex';
+                // Optional: Scroll to bottom when opening
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
             }
         });
 
@@ -377,11 +393,10 @@
             showTyping();
 
             try {
-                // 2. Send to n8n Webhook
-                const response = await fetch('https://n8n.automania.cloud/webhook-test/Simmy', {
+                // 2. Send to n8n LIVE Webhook
+                const response = await fetch('https://n8n.automania.cloud/webhook/Simmy', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    // NEW: We now send sessionId along with the message
                     body: JSON.stringify({ 
                         message: message,
                         sessionId: sessionId 
