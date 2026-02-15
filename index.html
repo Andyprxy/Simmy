@@ -321,6 +321,13 @@
         const chatInput = document.getElementById('chat-input');
         const messagesDiv = document.getElementById('chat-messages');
 
+        // NEW: Generate or Retrieve Session ID
+        let sessionId = localStorage.getItem('simmy_chat_session');
+        if (!sessionId) {
+            sessionId = 'user_' + Math.random().toString(36).substr(2, 9);
+            localStorage.setItem('simmy_chat_session', sessionId);
+        }
+
         // Toggle Chat
         chatToggle.addEventListener('click', () => {
             if(chatContainer.style.display === 'flex') {
@@ -370,11 +377,15 @@
             showTyping();
 
             try {
-                // 2. Send to n8n Webhook - UPDATED TO ONLY USE WEBHOOK-TEST
+                // 2. Send to n8n Webhook
                 const response = await fetch('https://n8n.automania.cloud/webhook-test/Simmy', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ message: message }) 
+                    // NEW: We now send sessionId along with the message
+                    body: JSON.stringify({ 
+                        message: message,
+                        sessionId: sessionId 
+                    }) 
                 });
 
                 // 3. Handle Response
@@ -382,7 +393,6 @@
                 
                 if (response.ok) {
                     const data = await response.json();
-                    // Assumes n8n returns JSON like { "output": "Your answer here" }
                     const botReply = data.output || data.text || "I received your message but didn't get a text reply.";
                     addMessage(botReply, 'bot');
                 } else {
